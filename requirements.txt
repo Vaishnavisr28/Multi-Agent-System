@@ -8,4 +8,7 @@ sentence-transformers>=3.0.0
 faiss-cpu>=1.8.0
 duckduckgo-search>=6.2.11
 arxiv>=2.1.0
-
+fastapi
+uvicorn
+requests
+serpapi
