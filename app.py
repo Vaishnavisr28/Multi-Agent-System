@@ -2,6 +2,13 @@ import streamlit as st
 import requests
 import os
 from requests.exceptions import ConnectionError, Timeout
+import subprocess
+import threading
+
+def run_backend():
+    subprocess.Popen(["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"])
+
+threading.Thread(target=run_backend, daemon=True).start()
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
 
