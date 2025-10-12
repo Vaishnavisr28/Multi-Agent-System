@@ -3,14 +3,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "GROQ")
-
-# LLM API keys 
+ 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
-# SerpAPI 
+ 
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
-# ArXiv 
 ARXIV_EMAIL = os.getenv("ARXIV_EMAIL")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

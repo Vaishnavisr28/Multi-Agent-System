@@ -7,7 +7,7 @@ from .utils.llm_model import generate_summary
 def query_arxiv(query: str, max_results: int = 5) -> Dict:
     """
     Query ArXiv for recent papers related to a given topic.
-    Uses Gemini to summarize results into a readable paragraph.
+    Uses GROQ to summarize results into a readable paragraph.
     """
     append_log(f"ArXiv query: {query}")
 

@@ -45,13 +45,13 @@ def check_environment():
                 timeout=10,
             )
             if resp.status_code == 200:
-                report["Groq_API"] = "✅ Connected successfully"
+                report["Groq_API"] = " Connected successfully"
             else:
-                report["Groq_API"] = f"⚠️ Error {resp.status_code}: {resp.text[:100]}"
+                report["Groq_API"] = f" Error {resp.status_code}: {resp.text[:100]}"
         except Exception as e:
-            report["Groq_API"] = f"❌ Failed: {e}"
+            report["Groq_API"] = f" Failed: {e}"
     else:
-        report["Groq_API"] = "⚠️ Missing GROQ_API_KEY"
+        report["Groq_API"] = " Missing GROQ_API_KEY"
 
     # SerpAPI Check 
     if SERPAPI_KEY:
@@ -60,23 +60,23 @@ def check_environment():
             search = GoogleSearch({"q": "test", "api_key": SERPAPI_KEY})
             res = search.get_dict()
             if "organic_results" in res:
-                report["SerpAPI"] = "✅ Working"
+                report["SerpAPI"] = " Working"
             else:
-                report["SerpAPI"] = "⚠️ Key loaded, but no search results"
+                report["SerpAPI"] = " Key loaded, but no search results"
         except Exception as e:
-            report["SerpAPI"] = f"❌ Failed: {e}"
+            report["SerpAPI"] = f" Failed: {e}"
     else:
-        report["SerpAPI"] = "⚠️ Missing SERPAPI_KEY"
+        report["SerpAPI"] = " Missing SERPAPI_KEY"
 
     # ArXiv Check 
     try:
         search = arxiv.Search(query="AI", max_results=1)
         if next(search.results(), None):
-            report["ArXiv"] = "✅ Working"
+            report["ArXiv"] = " Working"
         else:
-            report["ArXiv"] = "⚠️ No results"
+            report["ArXiv"] = " No results"
     except Exception as e:
-        report["ArXiv"] = f"❌ Failed: {e}"
+        report["ArXiv"] = f" Failed: {e}"
 
     return report
 
