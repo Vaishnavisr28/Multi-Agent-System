@@ -1,3 +1,13 @@
+---
+title: Multi-Agent-Model
+emoji: 🧠
+colorFrom: purple
+colorTo: indigo
+sdk: docker
+app_file: Dockerfile
+pinned: false
+license: mit
+---
 Multi-Agent Research Assistant
 Overview:
 
